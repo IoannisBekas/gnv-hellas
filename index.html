@@ -9,9 +9,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;0,600;0,800;1,300;1,400&family=Caveat:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=11">
 </head>
 <body>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader__grid"></div>
+  <div class="loader__stage" id="loaderStage">
+    <video class="loader__video" id="loaderVideo" src="assets/video/loading.mp4" autoplay muted loop playsinline preload="auto"></video>
+    <img class="loader__fallback" src="assets/fig/fig1.webp" alt="">
+  </div>
+</div>
 
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="rail" aria-hidden="true"><span>N</span><i><b id="railThumb"></b></i><span>S</span></div>
@@ -192,7 +201,11 @@
 
 <!-- STRIP -->
 <section class="strip" aria-hidden="true">
-  <img src="assets/fig/strip.webp" alt="" onerror="this.parentNode.remove()">
+  <div class="strip__frame">
+    <video class="strip__video" autoplay muted loop playsinline preload="auto" poster="assets/fig/strip.webp">
+      <source src="assets/video/strip.mp4" type="video/mp4" onerror="var v=this.parentNode;var i=new Image();i.src='assets/fig/strip.webp';i.alt='';i.className='strip__still';v.replaceWith(i)">
+    </video>
+  </div>
 </section>
 
 </main>
@@ -217,7 +230,7 @@
   </div>
 </footer>
 
-<script src="js/i18n.js?v=7"></script>
-<script src="js/main.js?v=7"></script>
+<script src="js/i18n.js?v=11"></script>
+<script src="js/main.js?v=11"></script>
 </body>
 </html>

@@ -185,6 +185,107 @@
       "&body=" + encodeURIComponent("Please send the B2B Partnership Guide to: " + email);
   });
 
+  // ---- loader: looping character + handwritten words, then the grid "settles" into the page ----
+  var root = document.documentElement;
+  function runLoader() {
+    var loader = document.getElementById("loader");
+    return new Promise(function (resolve) {
+      if (!loader) return resolve();
+      if (reduce) { loader.remove(); return resolve(); }
+
+      var stage = document.getElementById("loaderStage");
+      var grid = loader.querySelector(".loader__grid");
+      var vid = document.getElementById("loaderVideo");
+      var WORDS = ["4631", "Ierapetra", "OKAA", "Rentis", "2020", "18233", "Athens", "G.N.V.", "I.K.E.", "Crete", "Attica", "33", "Est. 2020"];
+      var LEFT = [[-9.3, -16.6], [-11.7, -2.2], [-8, 15.7], [-15.5, -9], [-13, 8.5], [-5.5, -20]];
+      var RIGHT = [[6.4, -13.7], [15.2, 1.2], [9, 14.5], [14.5, -8.5], [5.5, 18], [16.5, -15.5]];
+      var ROT = [12.4, -5, 8.2, -6.5, 5, -8.2, 3.5];
+      var OPA = [1, 0.85, 0.58, 0.48, 0.23];
+      var MIN_MS = 2600, MAX_MS = 4000, TICK_MS = 170, LEAVE_MS = 800;
+
+      var cellVw = window.innerWidth <= 900 ? 0.16 : 0.082;
+      var a = 0.665, r = 0.7;
+      function drawGrid() {
+        var cell = cellVw * window.innerWidth;
+        var cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+        grid.style.backgroundSize = (a * cell) + "px " + (r * cell) + "px";
+        grid.style.backgroundPosition = (cx - a * cx) + "px " + (cy - r * cy) + "px";
+      }
+      drawGrid();
+      window.addEventListener("resize", drawGrid);
+      root.style.overflow = "hidden";
+
+      var n = 0, li = 0, ri = 0, live = [], timer = 0, started = false;
+      function spawn() {
+        var left = n % 2 === 0;
+        var set = left ? LEFT : RIGHT;
+        var pos = set[(left ? li++ : ri++) % set.length];
+        var el = document.createElement("span");
+        el.className = "loader__move";
+        el.textContent = WORDS[n % WORDS.length];
+        el.style.setProperty("--mx", pos[0] + "rem");
+        el.style.setProperty("--my", pos[1] + "rem");
+        el.style.setProperty("--mr", ROT[n % ROT.length] + "deg");
+        stage.appendChild(el);
+        n++;
+        live.unshift(el);
+        live.forEach(function (w, i) { if (i < OPA.length) w.style.setProperty("--mo", OPA[i]); });
+        if (live.length > OPA.length) {
+          var old = live.pop();
+          old.classList.add("is-out");
+          setTimeout(function () { old.remove(); }, 350);
+        }
+        requestAnimationFrame(function () { el.classList.add("is-in"); });
+      }
+      function start() {
+        if (started) return;
+        started = true;
+        spawn();
+        timer = setInterval(spawn, TICK_MS);
+      }
+      try { document.fonts.load('3.5rem "Caveat"').then(start); } catch (e) {}
+      setTimeout(start, 400);
+
+      var videoReady = new Promise(function (ok) {
+        function fail() { loader.classList.add("no-video"); ok(); }
+        vid.addEventListener("error", fail, { once: true });
+        if (vid.readyState >= 3) ok(); else vid.addEventListener("canplay", function () { ok(); }, { once: true });
+        var p = vid.play && vid.play();
+        if (p && p.catch) p.catch(function () {});
+      });
+      var minTime = new Promise(function (ok) { setTimeout(ok, MIN_MS); });
+      var maxTime = new Promise(function (ok) { setTimeout(ok, MAX_MS); });
+
+      function ease(p) { return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; }
+      var finished = false;
+      function finish() {
+        if (finished) return;
+        finished = true;
+        root.style.overflow = "";
+        loader.classList.add("is-done");
+        resolve();
+        setTimeout(function () { window.removeEventListener("resize", drawGrid); loader.remove(); }, 450);
+      }
+      function leave() {
+        clearInterval(timer);
+        loader.classList.add("is-leaving");
+        var t0 = performance.now();
+        setTimeout(finish, LEAVE_MS + 250);
+        (function frame(now) {
+          var d = Math.min(1, (now - t0) / LEAVE_MS), g = ease(d);
+          a = 0.665 + (1 - 0.665) * g;
+          r = 0.7 + (1 - 0.7) * g;
+          drawGrid();
+          if (d < 1) return requestAnimationFrame(frame);
+          finish();
+        })(t0);
+      }
+      Promise.race([Promise.all([minTime, videoReady]), maxTime]).then(leave);
+    });
+  }
+
   apply(detectLang());
   onScroll();
+  setTimeout(function () { root.classList.add("ready"); }, 9000);
+  runLoader().then(function () { root.classList.add("ready"); });
 })();
