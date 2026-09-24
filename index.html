@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G.N.V. HELLAS — The Invisible Rules of Wholesale</title>
+  <meta name="description" content="Wholesale of fruit and vegetables. Ierapetra to Athens. Established 2020.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,200;0,300;0,400;0,600;0,800;1,300;1,400&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=7">
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="rail" aria-hidden="true"><span>N</span><i><b id="railThumb"></b></i><span>S</span></div>
+
+<!-- HEADER -->
+<header class="header" id="top">
+  <div class="hd-left">
+    <a class="brand" href="#top">G.N.V. HELLAS</a>
+    <span class="edition" data-i18n="header.est"></span>
+  </div>
+  <nav class="hd-nav" aria-label="Main">
+    <a href="#intro" data-i18n="header.intro"></a>
+    <a href="#operations" data-i18n="header.ops"></a>
+    <a href="#leadership" data-i18n="header.lead"></a>
+  </nav>
+  <div class="hd-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">En</button>
+      <button type="button" data-lang="el" aria-pressed="false">El</button>
+      <button type="button" data-lang="de" aria-pressed="false">De</button>
+    </div>
+    <a class="btn" href="#contact" data-i18n="header.cta"></a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <h1 class="hero-title" aria-label="G.N.V. HELLAS">
+    <span class="line"><span class="ch">G.N.V.</span></span>
+    <span class="line"><span class="ch">HELLAS.</span></span>
+  </h1>
+  <img class="float hero-obj" src="assets/obj/hero.webp" alt="" data-speed=".06" data-rot=".012" style="--r0:8deg" onerror="this.remove()">
+  <p class="byline"><em data-i18n="hero.by"></em></p>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span class="sc-l sc-a">S</span><span class="sc-l sc-b">C</span><span class="sc-l sc-c">R</span>
+    <svg viewBox="0 0 24 36" width="26" height="40"><rect x="2" y="2" width="20" height="32" rx="10" fill="none" stroke="currentColor" stroke-width="1.4"/><line class="wheel" x1="12" y1="9" x2="12" y2="15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="sc-l sc-d">O</span><span class="sc-l sc-e">L</span><span class="sc-l sc-f">L</span>
+  </div>
+
+  <div class="meta">
+    <strong>G.N.V. HELLAS.</strong>
+    <span data-i18n="hero.tag"></span>
+    <span class="teal" id="clock"></span>
+    <strong data-i18n="hero.city"></strong>
+  </div>
+
+  <span class="note" style="--x:14%;--y:14%">4631</span>
+  <span class="note gray" style="--x:78%;--y:10%">Ierapetra</span>
+  <span class="note" style="--x:30%;--y:66%">OKAA</span>
+  <span class="note gray" style="--x:64%;--y:72%">18233</span>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <img class="float f-tomato" src="assets/obj/tomato.webp" alt="" data-speed=".10" data-rot=".02" style="--r0:-14deg" onerror="this.remove()">
+  <img class="float f-cucumber" src="assets/obj/cucumber.webp" alt="" data-speed=".14" data-rot="-.02" style="--r0:24deg" onerror="this.remove()">
+  <div class="rt" id="rtIntro">
+    <p data-rt="intro.p1"></p>
+    <p data-rt="intro.p2"></p>
+    <p data-rt="intro.p3"></p>
+  </div>
+  <figure class="float pcard pc-a" data-speed=".07" data-rot="-.008" style="--r0:-4deg"><img src="assets/img/greenhouse.jpg" alt="" loading="lazy" onerror="this.closest('.pcard').remove()"><figcaption data-i18n="frames.f2t"></figcaption></figure>
+  <figure class="float pcard pc-b" data-speed=".12" data-rot=".01" style="--r0:5deg"><img src="assets/img/harvest.jpg" alt="" loading="lazy" onerror="this.closest('.pcard').remove()"><figcaption data-i18n="frames.f3t"></figcaption></figure>
+  <span class="note teal" style="--x:8%;--y:20%">Rentis</span>
+  <span class="note gray" style="--x:88%;--y:44%">33</span>
+  <span class="note" style="--x:12%;--y:78%">2020</span>
+</section>
+
+<!-- JOURNEY: pinned horizontal filmstrip -->
+<section class="journey" id="journey">
+  <div class="journey-pin">
+    <header class="journey-head">
+      <p class="kicker" data-i18n="journey.kicker"></p>
+      <h2 data-i18n="journey.title"></h2>
+    </header>
+    <div class="track" id="jTrack">
+      <figure class="frame"><span class="num">01</span><div class="ph"><img src="assets/img/coast.jpg" alt="" data-i18n-alt="frames.f1t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f1t"></b><span data-i18n="frames.f1p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">02</span><div class="ph"><img src="assets/img/greenhouse.jpg" alt="" data-i18n-alt="frames.f2t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f2t"></b><span data-i18n="frames.f2p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">03</span><div class="ph"><img src="assets/img/harvest.jpg" alt="" data-i18n-alt="frames.f3t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f3t"></b><span data-i18n="frames.f3p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">04</span><div class="ph"><img src="assets/img/packing.jpg" alt="" data-i18n-alt="frames.f4t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f4t"></b><span data-i18n="frames.f4p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">05</span><div class="ph"><img src="assets/img/tally.jpg" alt="" data-i18n-alt="frames.f5t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f5t"></b><span data-i18n="frames.f5p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">06</span><div class="ph"><img src="assets/img/crates.jpg" alt="" data-i18n-alt="frames.f6t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f6t"></b><span data-i18n="frames.f6p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">07</span><div class="ph"><img src="assets/img/dock.jpg" alt="" data-i18n-alt="frames.f7t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f7t"></b><span data-i18n="frames.f7p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">08</span><div class="ph"><img src="assets/img/road.jpg" alt="" data-i18n-alt="frames.f8t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f8t"></b><span data-i18n="frames.f8p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">09</span><div class="ph"><img src="assets/img/forklift.jpg" alt="" data-i18n-alt="frames.f9t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f9t"></b><span data-i18n="frames.f9p"></span></figcaption></figure>
+      <figure class="frame"><span class="num">10</span><div class="ph"><img src="assets/img/market.jpg" alt="" data-i18n-alt="frames.f10t" loading="lazy" onerror="this.remove()"></div><figcaption><b data-i18n="frames.f10t"></b><span data-i18n="frames.f10p"></span></figcaption></figure>
+    </div>
+    <div class="j-progress" aria-hidden="true"><span class="j-from">Ierapetra</span><i><b id="jBar"></b></i><span class="j-to">Athens</span><span class="j-count" id="jCount">01 / 10</span></div>
+  </div>
+</section>
+
+<!-- OPERATIONS -->
+<section class="ops" id="operations">
+  <img class="float f-pepper" src="assets/obj/pepper.webp" alt="" data-speed=".12" data-rot=".02" style="--r0:16deg" onerror="this.remove()">
+  <div class="ops-grid">
+    <div class="ops-left">
+      <figure class="slot facility"><img src="assets/img/facility.jpg" alt="" data-i18n-alt="ops.alt" loading="lazy" onerror="this.remove()"><figcaption data-i18n="ops.cap"></figcaption></figure>
+
+      <div class="card table">
+        <div class="tr th"><span data-i18n="ops.th1"></span><span data-i18n="ops.th2"></span></div>
+        <div class="tr"><span data-i18n="ops.r1l"></span><span data-i18n="ops.r1v"></span></div>
+        <div class="tr"><span data-i18n="ops.r2l"></span><span data-i18n="ops.r2v"></span></div>
+        <div class="tr"><span data-i18n="ops.r3l"></span><span data-i18n="ops.r3v"></span></div>
+        <a class="btn btn-wide" href="#contact" data-i18n="ops.btn"></a>
+      </div>
+      <p class="foot-note" data-i18n="ops.foot"></p>
+    </div>
+
+    <div class="ops-right">
+      <p class="statement">
+        <span data-i18n="ops.s1"></span><br>
+        <span data-i18n="ops.s2"></span><br>
+        <span data-i18n="ops.s3"></span>
+      </p>
+      <p class="body" data-i18n-html="ops.n1"></p>
+      <p class="body" data-i18n-html="ops.n2"></p>
+
+      <div class="card ledger">
+        <div class="ledger-head"><strong data-i18n="fin.title"></strong><span data-i18n="fin.sub"></span></div>
+        <div class="tr"><span data-i18n="fin.l1"></span><b>~€9.60M</b></div>
+        <div class="tr"><span data-i18n="fin.l2"></span><b>~€351K</b></div>
+        <div class="tr"><span data-i18n="fin.l3"></span><b>~3.7%</b></div>
+        <div class="tr"><span data-i18n="fin.l4"></span><b>33</b></div>
+        <div class="tr"><span data-i18n="fin.l5"></span><b>€20,000</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPTURE -->
+<section class="capture" id="contact">
+  <h2 data-i18n="cap.title"></h2>
+  <form id="inquiryForm" class="cap-form" novalidate>
+    <label class="sr" for="inqEmail" data-i18n="cap.label"></label>
+    <input id="inqEmail" type="email" autocomplete="email" required data-i18n-placeholder="cap.placeholder">
+    <button class="btn" type="submit" data-i18n="cap.send"></button>
+  </form>
+  <p class="fine" id="formNote" role="status"></p>
+  <p class="fine" data-i18n="cap.fine"></p>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leader" id="leadership">
+  <figure class="slot portrait"><img src="assets/img/leadership.jpg" alt="" data-i18n-alt="lead.alt" loading="lazy" onerror="this.remove()"><figcaption data-i18n="lead.cap"></figcaption></figure>
+
+  <div class="leader-col">
+    <p class="kicker" data-i18n="lead.kicker"></p>
+    <p class="kicker sub" data-i18n="lead.meta"></p>
+    <p class="leader-text" data-i18n-html="lead.p1"></p>
+    <p class="leader-text" data-i18n-html="lead.p2"></p>
+    <p class="sign">Nikolaos Ch. Giochalas</p>
+    <p class="who"><strong data-i18n="lead.name"></strong><br><span data-i18n="lead.role"></span></p>
+    <p class="registry">VAT: 801420516 &nbsp;|&nbsp; GEMI: 156438603000</p>
+  </div>
+
+  <ul class="chips">
+    <li style="--x:3%;--y:6%"><b>2020</b><span data-i18n="chips.c1"></span></li>
+    <li style="--x:80%;--y:6%"><b>33</b><span data-i18n="chips.c2"></span></li>
+    <li style="--x:4%;--y:76%"><b>€20,000</b><span data-i18n="chips.c3"></span></li>
+    <li style="--x:78%;--y:52%"><b>4631</b><span data-i18n="chips.c4"></span></li>
+    <li style="--x:70%;--y:84%"><b>2</b><span data-i18n="chips.c5"></span></li>
+  </ul>
+  <span class="note teal" style="--x:40%;--y:4%">est. 2020</span>
+</section>
+
+<!-- CLAIM -->
+<section class="claim" id="claim">
+  <img class="float f-truck" src="assets/obj/truck.webp" alt="" data-speed=".10" data-rot="-.015" style="--r0:-8deg" onerror="this.remove()">
+  <div class="rt claim-text"><p data-rt="claim.p" data-outline="1"></p></div>
+  <figure class="float pcard pc-c" data-speed=".09" data-rot=".01" style="--r0:-6deg"><img src="assets/img/dock.jpg" alt="" loading="lazy" onerror="this.closest('.pcard').remove()"><figcaption data-i18n="frames.f7t"></figcaption></figure>
+  <figure class="float pcard pc-d" data-speed=".13" data-rot="-.01" style="--r0:4deg"><img src="assets/img/road.jpg" alt="" loading="lazy" onerror="this.closest('.pcard').remove()"><figcaption data-i18n="frames.f8t"></figcaption></figure>
+  <span class="note gray" style="--x:10%;--y:24%">Ierapetra</span>
+  <span class="note teal" style="--x:84%;--y:60%">Rentis</span>
+</section>
+
+<!-- STRIP -->
+<section class="strip" aria-hidden="true">
+  <img src="assets/fig/strip.webp" alt="" onerror="this.parentNode.remove()">
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-col">
+    <strong>G.N.V. HELLAS.</strong>
+    <a href="#operations" data-i18n="header.ops"></a>
+    <a href="#leadership" data-i18n="header.lead"></a>
+    <a href="#contact" data-i18n="header.cta"></a>
+    <a class="hello" id="helloLink" href="mailto:info@example.com" data-i18n="footer.hello"></a>
+  </div>
+  <div class="ft-col mid">
+    <span>© <span id="year"></span> GIOHALAS NIKOLAKIS VEGETABLES HELLAS Ι.Κ.Ε. <span data-i18n="footer.rights"></span></span>
+    <span class="muted">VAT: 801420516 | GEMI: 156438603000</span>
+  </div>
+  <div class="ft-col right">
+    <strong data-i18n="footer.follow"></strong>
+    <a href="https://www.linkedin.com/search/results/companies/?keywords=G.N.V.%20HELLAS" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://publicity.businessportal.gr/" target="_blank" rel="noopener" data-i18n="footer.registry"></a>
+  </div>
+</footer>
+
+<script src="js/i18n.js?v=7"></script>
+<script src="js/main.js?v=7"></script>
+</body>
+</html>
