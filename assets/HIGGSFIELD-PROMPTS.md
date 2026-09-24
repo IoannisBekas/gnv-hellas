@@ -14,7 +14,7 @@ facility, greenhouse, harvest, packing, tally, crates, dock, road, forklift, mar
 Οι εικόνες είναι παραγόμενες (AI). Αν θέλετε πραγματικές φωτογραφίες, αντικαταστήστε τα αρχεία με το ίδιο όνομα.
 
 ## assets/video — animated (Kling 3.0, image-to-video, 5 sec, χωρίς ήχο)
-loading.mp4 (ο αγρότης του loader) και strip.mp4 (η σειρά ανθρωπακιών στο footer). Και τα δύο έχουν λευκό φόντο και εμφανίζονται με mix-blend-mode: multiply πάνω στο γκρι πλέγμα, όπως στο moneyincheck.org. Έχουν επεξεργαστεί με ffmpeg (κοπή, καθαρό λευκό, ping-pong για ομαλό loop).
+loading.mp4 (ο αγρότης του loader), strip.mp4 (η σειρά ανθρωπακιών στο footer) και fig1/fig2/fig3.mp4 (τα μικρά ανθρωπάκια μέσα στο κείμενο του intro). Και τα δύο έχουν λευκό φόντο και εμφανίζονται με mix-blend-mode: multiply πάνω στο γκρι πλέγμα, όπως στο moneyincheck.org. Έχουν επεξεργαστεί με ffmpeg (κοπή, καθαρό λευκό, ping-pong για ομαλό loop).
 
 ## Ελλείπον
 - `assets/img/leadership.jpg` (πορτρέτο, 4:5): προτείνεται πραγματική φωτογραφία του διαχειριστή.

@@ -22,6 +22,37 @@
     return SUPPORTED.indexOf(nav) > -1 ? nav : "en";
   }
 
+  // ---- inline animated characters (white-background videos multiplied onto the page) ----
+  var figIO = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      var v = en.target;
+      if (en.isIntersecting) { var p = v.play && v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { rootMargin: "120px" }) : null;
+
+  function makeFig(n) {
+    var v = document.createElement("video");
+    v.className = "inline-fig";
+    v.muted = true; v.loop = true; v.playsInline = true;
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("aria-hidden", "true");
+    v.preload = "auto";
+    v.poster = "assets/fig/fig" + n + ".webp";
+    v.src = "assets/fig/fig" + n + ".mp4";
+    v.addEventListener("error", function () {
+      var img = new Image();
+      img.className = "inline-fig";
+      img.alt = "";
+      img.src = "assets/fig/fig" + n + ".webp";
+      if (v.parentNode) v.replaceWith(img);
+    }, { once: true });
+    if (!reduce) {
+      v.autoplay = true;
+      if (figIO) figIO.observe(v);
+    }
+    return v;
+  }
+
   // ---- word-by-word scroll reveal text ----
   var rtBlocks = [];
   function buildReveal(el, text) {
@@ -31,11 +62,7 @@
       var m = tok.match(/^\{fig(\d)\}$/);
       var node;
       if (m) {
-        node = document.createElement("img");
-        node.className = "inline-fig";
-        node.alt = "";
-        node.src = "assets/fig/fig" + m[1] + ".webp";
-        node.onerror = function () { node.remove(); };
+        node = makeFig(m[1]);
       } else {
         node = document.createElement("span");
         node.className = "w";

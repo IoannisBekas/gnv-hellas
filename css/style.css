@@ -87,13 +87,13 @@ main, .footer { position: relative; }
 .rt p { font-weight: 300; line-height: 1.12; letter-spacing: -.015em; }
 .rt .w { color: var(--dim); transition: color .35s; }
 .rt .w.on { color: var(--ink); }
-.rt .inline-fig { display: inline-block; height: 1.5em; width: auto; vertical-align: -.2em; margin: 0 .12em; }
+.rt .inline-fig { display: inline-block; height: 2.1em; width: auto; vertical-align: -.42em; margin: -.55em .14em -.4em; mix-blend-mode: multiply; }
 .claim-text p .w { -webkit-text-stroke: 0; }
 .claim-text[data-outlined] p .w:not(.on) { color: transparent; -webkit-text-stroke: 1px rgba(0, 0, 0, .35); }
 
 /* Intro */
 .intro { padding: clamp(80px, 14vw, 220px) var(--pad); }
-.intro .rt { max-width: min(64vw, 1040px); margin-inline: auto; text-align: center; position: relative; z-index: 2; }
+.intro .rt { max-width: min(64vw, 1040px); margin-inline: auto; text-align: center; }
 .intro .rt p { font-size: clamp(1.9rem, 4.2vw, 5.2rem); }
 .intro .rt p + p { margin-top: 1.1em; }
 .f-tomato { width: clamp(80px, 11vw, 190px); left: 2%; top: 18%; }
@@ -150,7 +150,7 @@ main, .footer { position: relative; }
 
 /* Claim */
 .claim { padding: clamp(80px, 12vw, 190px) var(--pad); }
-.claim-text { max-width: min(68vw, 1100px); margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+.claim-text { max-width: min(68vw, 1100px); margin: 0 auto; text-align: center; }
 .claim-text p { font-weight: 400; font-size: clamp(2.2rem, 5vw, 6.2rem); line-height: 1.04; letter-spacing: -.025em; }
 .claim .rt .w.on { color: var(--ink); }
 .f-truck { width: clamp(120px, 15vw, 250px); right: 1.5%; top: 6%; }
